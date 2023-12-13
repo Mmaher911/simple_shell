@@ -41,6 +41,7 @@ extern char **environ;
  * @str: a string
  * @function: points to the next node
  */
+
 typedef struct builtin_str
 {
 	char *str;
@@ -53,6 +54,7 @@ typedef struct builtin_str
  * @str: a string
  * @next: points to the next node
  */
+
 typedef struct liststr
 {
 	int num;
@@ -111,84 +113,84 @@ typedef struct passinfo
 	0, 0, 0}
 
 /* string1.c */
-char *_strncpy(char *dest, char *src, int n);
+char *_strncpy(char *des, char *sr, int n);
 int _strlen(char *s);
 int _putchar(char c);
 int _atoi(char *s);
 
 /* string2.c */
-void _puts(char *str);
+void _puts(char *st);
 int _strcmp(char *s1, char *s2);
 int _isalpha(int c);
 
 /* string3.c */
-void array_rev(char *arr, int len);
-int intlen(int num);
+void array_rev(char *ar, int ln);
+int intlen(int nm);
 char *_itoa(unsigned int n);
 
 /* string4.c */
-char *_strcat(char *dest, char *src);
-char *_strcpy(char *dest, char *src);
-char *_strchr(char *s, char c);
+char *_strcat(char *des, char *sr);
+char *_strcpy(char *des, char *sr);
+char *_strchr(char *se, char ch);
 
 /* string5.c */
 int _strncmp(const char *s1, const char *s2, size_t n);
-char *_strdup(char *str);
+char *_strdup(char *st);
+char *starts_with(const char *h, const char *n);
 
 /* memory1.c */
-void free_env(char **env);
-void *fill_an_array(void *a, int el, unsigned int len);
-char *_memcpy(char *dest, char *src, unsigned int n);
+void free_env(char **en);
+void *fill_an_array(void *a, int e, unsigned int ln);
+char *_memcpy(char *des, char *sr, unsigned int n);
 
 /* memory2.c */
-void *_calloc(unsigned int size);
-void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
-void free_all(char **input, char *line);
+void *_calloc(unsigned int s);
+void *_realloc(void *p, unsigned int o, unsigned int n);
+void free_all(char **c, char *l);
 
 /* input1.c */
 char *_getline();
-char *space(char *str);
-char *enter(char *string);
+char *space(char *st);
+char *enter(char *str);
 
 /* input2.c */
-void hashtag_handler(char *buff);
+void hashtag_handler(char *buf);
 void prompt(void);
-unsigned int check_delim(char c, const char *str);
+unsigned int check_delim(char c, const char *st);
 
 /* input3.c */
-char *_strtok(char *str, const char *delim);
-int history(char *input);
+char *_strtok(char *st, const char *del);
+int history(char *i);
 char **separator(char *input);
 
 /* file_arg.c */
 void read_file(char *file, char **argv);
-void treat_file(char *line, int count, FILE *fp, char **argv);
-void exit_bul_for_file(char **cmd, char *line, FILE *fd);
+void parse_treat_file(char *line, int count, FILE *fp, char **argv);
+void exit_bul(char **cmd, char *line, FILE *fd);
 
-/* parced_arg.c */
-char **parse_cmd(char *input);
-int handle_builtin(char **cmd, int er);
+/* parsed_arg.c */
+char **par_cmd(char *input);
+int hand_builtin(char **cmd, int er);
 int check_cmd(char **cmd, char *input, int c, char **argv);
 void signal_to_handle(int sig);
 
 /* err.c*/
-void print_error(char *input, int counter, char **argv);
-void _prerror(char **argv, int c, char **cmd);
-void error_file(char **argv, int c);
+void pr_error(char *input, int counter, char **argv);
+void _perror(char **argv, int c, char **cmd);
+void err_file(char **argv, int c);
 
 /* env.c */
-extern char **environ;
-void create_envi(char **envi);
-void free_env(char **env);
+void create_env(char **env);
+void free_envi(char **envi);
 
 /* printf */
-void print_number(unsigned int n);
-void print_number_int(int n);
-int print_echo(char **cmd);
+void print_num(unsigned int n);
+void print_num_int(int n);
+int print_echo(char **cm);
 
 /* path.c */
 int path_cmd(char **cmd);
-char *build(char *token, char *value);
+char *build(char *tok, char *val);
 char *_getenv(char *name);
 
 /* help1.c */
