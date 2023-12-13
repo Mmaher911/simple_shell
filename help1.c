@@ -1,6 +1,6 @@
 #include "main.h"
 
-/**
+/*
  * help_env - Displays information on the shell by env command
  */
 void help_env(void)
@@ -25,7 +25,8 @@ void help_setenv(void)
 }
 
 /**
- * help_unsetenv - Displays information on the shell by builtin command unsetenv
+ * help_unsetenv - Displays information on the shell
+ * by builtin command unsetenv
  *
  */
 void help_unsetenv(void)
