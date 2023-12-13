@@ -65,7 +65,7 @@ int handle_builtin(char **cmd, int st)
  * @cmd: parsed command array of strings
  * @input: Input recieved from user
  * @argv: Arguments before start of program
- * 	(argv[0] == Shell Program Name)
+ * (argv[0] == Shell Program Name)
  * @c: Shell execution count
  * @stat: Exit status
  */
