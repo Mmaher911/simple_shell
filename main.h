@@ -166,7 +166,7 @@ char **separator(char *input);
 /* file_arg.c */
 void read_file(char *file, char **argv);
 void parse_treat_file(char *line, int count, FILE *fp, char **argv);
-void exit_bul(char **cmd, char *line, FILE *fd);
+void exit_bul_for_file(char **cmd, char *line, FILE *fd);
 
 /* parsed_arg.c */
 char **par_cmd(char *input);
