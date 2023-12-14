@@ -126,7 +126,7 @@ int check_cmd(char **cmd, char *input, int c, char **argv)
 			path_cmd(cmd);
 		if (access(cmd[0], R_OK) != 0)
 		{
-			print_echo(cmd[char *], c, argv);
+			print_echo(cmd[0], c, argv);
 			free_all(cmd, input);
 			exit(127);
 		}
