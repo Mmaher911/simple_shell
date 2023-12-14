@@ -36,15 +36,15 @@ extern char **environ;
 
 
 /**
- * struct builtin_str - singly linked list
+ * struct builtin - singly linked list
  *
- * @str: a string
+ * @command: a string
  * @function: points to the next node
  */
 
-typedef struct builtin_str
+typedef struct _builtin
 {
-	char *str;
+	char *command;
 	int (*function)(char **line, int st);
 } builtin_t;
 
