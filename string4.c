@@ -57,6 +57,6 @@ char *_strchr(char *se, char ch)
 		{
 			break;
 		}
-	} while (*s++);
+	} while (*se++);
 	return (se);
 }

@@ -17,7 +17,7 @@ void read_file(char *file, char **argv)
 	fp = fopen(file, "r");
 	if (fp == NULL)
 	{
-		error_file(argv, count);
+		err_file(argv, count);
 		exit(127);
 	}
 	while ((getline(&line, &len, fp)) != -1)
@@ -44,7 +44,7 @@ void parse_treat_file(char *line, int count, FILE *fp, char **argv)
 	char **cmd;
 	int stat = 0;
 
-	cmd = parse_cmd(line);
+	cmd = par_cmd(line);
 	if (_strncmp(cmd[0], "exit", 4) == 0)
 		exit_bul_for_file(cmd, line, fp);
 	else if (check_builtin(cmd) == 0)

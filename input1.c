@@ -85,4 +85,4 @@ char *enter(char *str)
 {
 	free(str);
 	return ("\0");
-g
+}

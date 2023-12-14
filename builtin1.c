@@ -7,7 +7,7 @@
 
 int check_builtin(char **cmd)
 {
-	builtin fun[] = {
+	builtin_t fun[] = {
 		{"cd", NULL},
 		{"help", NULL},
 		{"echo", NULL},
@@ -39,7 +39,7 @@ int check_builtin(char **cmd)
 
 int handle_builtin(char **cmd, int st)
 {
-	builtin built_in[] = {
+	builtin_t built_in[] = {
 		{"cd", change_dir},
 		{"env", dis_env},
 		{"help", display_help},
@@ -84,7 +84,7 @@ void exit_bul(char **cmd, char *input, char **argv, int c, int stat)
 	{
 		if (_isalpha(cmd[1][i++]) != 0)
 		{
-			_prerror(argv, c, cmd);
+			_perror(argv, c, cmd);
 			free(input);
 			free(cmd);
 			exit(2);
@@ -94,7 +94,7 @@ void exit_bul(char **cmd, char *input, char **argv, int c, int stat)
 			status = _atoi(cmd[1]);
 			if (status == 2)
 			{
-				_prerror(argv, c, cmd);
+				_perror(argv, c, cmd);
 				free(input);
 				free(cmd);
 				exit(status);

@@ -112,12 +112,6 @@ typedef struct passinfo
 {NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
 	0, 0, 0}
 
-/* loop.c */
-int hsh(info_t *, char **);
-int find_builtin(info_t *);
-void find_cmd(info_t *);
-void fork_cmd(info_t *);
-
 /* string1.c */
 char *_strncpy(char *des, char *sr, int n);
 int _strlen(char *s);

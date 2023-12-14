@@ -41,7 +41,7 @@ int main(__attribute__((unused)) int argc, char **argv)
 			if (commands[i + 1] == NULL)
 				free(commands);
 				break;
-			free(cmd);
+				free(cmd);
 		}
 		free(input);
 		free(commands);

@@ -44,7 +44,7 @@ char **par_cmd(char *input)
 
 int hand_builtin(char **cmd, int st)
 {
-	builtin built_in[] = {
+	builtin_t built_in[] = {
 		{"cd", change_dir},
 		{"env", dis_env},
 		{"help", display_help},
