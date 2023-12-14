@@ -34,36 +34,3 @@ void print_num_int(int n)
 
 	_putchar(x % 10 + '0');
 }
-
-/**
- * print_echo - Executes built-in echo
- * @cm: Parsed Command
- * Return: 0 Upon Success -1 Upon Failure
- */
-
-int print_echo(char **cm)
-{
-	pid_t pid;
-	int status;
-
-	pid = fork();
-	if (pid == 0)
-	{
-	if (execve("/bin/echo", cm, environ) == -1)
-	{
-		return (-1);
-	}
-		exit(EXIT_FAILURE);
-	}
-	else if (pid < 0)
-	{
-		return (-1);
-	}
-	else
-	{
-		do {
-			waitpid(pid, &status, WUNTRACED);
-		} while (!WIFEXITED(status) && !WIFSIGNALED(status));
-	}
-	return (1);
-}

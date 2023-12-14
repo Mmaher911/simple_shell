@@ -32,14 +32,14 @@ void read_file(char *file, char **argv)
 }
 
 /**
- * parse_treat_file - Parse commands to handle execution
+ * treat_file - Parse commands to handle execution
  * @line: file line
  * @count: counter of error
  * @fp: File descriptor
  * @argv: Command line arguments
  */
 
-void parse_treat_file(char *line, int count, FILE *fp, char **argv)
+void treat_file(char *line, int count, FILE *fp, char **argv)
 {
 	char **cmd;
 	int stat = 0;

@@ -19,7 +19,7 @@ char *_strtok(char *st, const char *del)
 		return (NULL);
 	for (i = 0; tokens[i] != '\0'; i++)
 	{
-		if (check_del(tokens[i], del) == 0)
+		if (check_delim(tokens[i], del) == 0)
 			break;
 	}
 	if (new_token[i] == '\0' || new_token[i] == '#')
@@ -31,7 +31,7 @@ char *_strtok(char *st, const char *del)
 	new_token = tokens;
 	for (i = 0; new_token[i] != '\0'; i++)
 	{
-		if (check_del(new_token[i], del) == 1)
+		if (check_delim(new_token[i], del) == 1)
 			break;
 	}
 	if (new_token[i] == '\0')

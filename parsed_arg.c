@@ -1,6 +1,39 @@
 #include "main.h"
 
 /**
+ * print_echo - Executes built-in echo
+ * @cm: Parsed Command
+ * Return: 0 Upon Success -1 Upon Failure
+ */
+
+int print_echo(char **cm)
+{
+	pid_t pid;
+	int status;
+
+	pid = fork();
+	if (pid == 0)
+	{
+	if (execve("/bin/echo", cm, environ) == -1)
+	{
+		return (-1);
+	}
+		exit(EXIT_FAILURE);
+	}
+	else if (pid < 0)
+	{
+		return (-1);
+	}
+	else
+	{
+		do {
+			waitpid(pid, &status, WUNTRACED);
+		} while (!WIFEXITED(status) && !WIFSIGNALED(status));
+	}
+	return (1);
+}
+
+/**
  * par_cmd - Parses command recieved from stdin
  * @input: gathered string from stdin
  * Return: Parsed strings to be used
@@ -93,7 +126,7 @@ int check_cmd(char **cmd, char *input, int c, char **argv)
 			path_cmd(cmd);
 		if (access(cmd[0], R_OK) != 0)
 		{
-			print_error(cmd[0], c, argv);
+			print_echo(cmd[char *], c, argv);
 			free_all(cmd, input);
 			exit(127);
 		}

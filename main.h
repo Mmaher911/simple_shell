@@ -17,6 +17,7 @@
 #define BUFSIZE 1024
 #define TOK_BUFSIZE 128
 #define DELIMITER " \t\r\n\a"
+#define PRINT(c) (write(STDERR_FILENO, c, _strlen(c)))
 
 #define CMD_NORM	0
 #define CMD_OR		1
@@ -36,7 +37,7 @@ extern char **environ;
 
 
 /**
- * struct builtin - singly linked list
+ * struct _builtin - singly linked list
  *
  * @command: a string
  * @function: points to the next node
@@ -165,7 +166,7 @@ char **separator(char *input);
 
 /* file_arg.c */
 void read_file(char *file, char **argv);
-void parse_treat_file(char *line, int count, FILE *fp, char **argv);
+void treat_file(char *line, int count, FILE *fp, char **argv);
 void exit_bul_for_file(char **cmd, char *line, FILE *fd);
 
 /* parsed_arg.c */
@@ -224,4 +225,4 @@ int history_dis(__attribute__((unused))char **c,
 		__attribute__((unused)) int st);
 
 
-#endif
+#endif /*MAIN_H*/
