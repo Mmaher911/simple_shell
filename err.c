@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * pr_error - Displays the error message
+ * print_error - Displays the error message
  * @input: Input from user
  * @counter: Count of loops in shell
  * @argv: Arguments before program starts
  */
 
-void pr_error(char *input, int counter, char **argv)
+void print_error(char *input, int counter, char **argv)
 {
 	char *er;
 
@@ -22,13 +22,13 @@ void pr_error(char *input, int counter, char **argv)
 }
 
 /**
- *  _perror - prints the custom error
+ *  _prerror - prints the custom error
  * @argv: Arguments before program starts
  * @c: Count of error
  * @cmd: parsed command strings array
  */
 
-void _perror(char **argv, int c, char **cmd)
+void _prerror(char **argv, int c, char **cmd)
 {
 	char *er = _itoa(c);
 

@@ -84,7 +84,7 @@ void exit_bul(char **cmd, char *input, char **argv, int c, int stat)
 	{
 		if (_isalpha(cmd[1][i++]) != 0)
 		{
-			_perror(argv, c, cmd);
+			_prerror(argv, c, cmd);
 			free(input);
 			free(cmd);
 			exit(2);
@@ -94,7 +94,7 @@ void exit_bul(char **cmd, char *input, char **argv, int c, int stat)
 			status = _atoi(cmd[1]);
 			if (status == 2)
 			{
-				_perror(argv, c, cmd);
+				_prerror(argv, c, cmd);
 				free(input);
 				free(cmd);
 				exit(status);

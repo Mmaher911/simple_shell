@@ -174,11 +174,10 @@ char **par_cmd(char *input);
 int hand_builtin(char **cmd, int er);
 int check_cmd(char **cmd, char *input, int c, char **argv);
 void signal_to_handle(int sig);
-int print_echo(char **cm);
 
 /* err.c*/
-void pr_error(char *input, int counter, char **argv);
-void _perror(char **argv, int c, char **cmd);
+void print_error(char *input, int counter, char **argv);
+void _prerror(char **argv, int c, char **cmd);
 void err_file(char **argv, int c);
 
 /* env.c */
@@ -186,8 +185,9 @@ void create_env(char **env);
 void free_envi(char **envi);
 
 /* printf */
-void print_num(unsigned int n);
-void print_num_int(int n);
+void print_number(unsigned int n);
+void print_number_int(int n);
+int print_echo(char **cmd);
 
 /* path.c */
 int path_cmd(char **cmd);
