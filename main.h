@@ -85,7 +85,7 @@ typedef struct liststr
  *@readfd: the fd from which to read line input
  *@histcount: the history line number count
  */
-typedef struct passinfo
+typedef struct data
 {
 	char *args;
 	char **argv;
@@ -218,11 +218,9 @@ void exit_bul(char **cmd, char *input, char **argv, int c,
 int change_dir(char **cmd, __attribute__((unused))int st);
 
 /* biultin2.c */
-int dis_env(__attribute__((unused)) char **cmd,
-		__attribute__((unused)) int st);
+int dis_env(char **cmd, __attribute__((unused)) int st);
 int echo_bul(char **cmd, int st);
-int history_dis(__attribute__((unused))char **c,
-		__attribute__((unused)) int st);
+int history_dis(char **c, __attribute__((unused)) int st);
 
 
 #endif /*MAIN_H*/
