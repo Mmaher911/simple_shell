@@ -1,13 +1,13 @@
 #include "shell.h"
 
 /**
- * input_buf - buffers chained commands
- * @info: parameter struct
- * @buf: address of buffer
- * @len: address of len var
- *
+ * input_buf - function to buffer command chain
+ * @info: parameter struct info
+ * @buf: buffer address
+ * @len: len var adress
  * Return: bytes read
  */
+
 ssize_t input_buf(info_t *info, char **buf, size_t *len)
 {
 	ssize_t r = 0;
@@ -45,11 +45,11 @@ ssize_t input_buf(info_t *info, char **buf, size_t *len)
 }
 
 /**
- * get_input - gets a line minus the newline
- * @info: parameter struct
- *
- * Return: bytes read
+ * get_input - function of gets a line minus the newline
+ * @info: parameter struct info
+ * Return: to read bytes
  */
+
 ssize_t get_input(info_t *info)
 {
 	static char *buf; /* the ';' command chain buffer */
@@ -90,13 +90,13 @@ ssize_t get_input(info_t *info)
 }
 
 /**
- * read_buf - reads a buffer
- * @info: parameter struct
- * @buf: buffer
- * @i: size
- *
- * Return: r
+ * read_buf - function to reads a buffer
+ * @info: parameter struct info
+ * @buf: the buffer
+ * @i: the size
+ * Return: to r
  */
+
 ssize_t read_buf(info_t *info, char *buf, size_t *i)
 {
 	ssize_t r = 0;
@@ -110,13 +110,13 @@ ssize_t read_buf(info_t *info, char *buf, size_t *i)
 }
 
 /**
- * _getline - gets the next line of input from STDIN
- * @info: parameter struct
- * @ptr: address of pointer to buffer, preallocated or NULL
- * @length: size of preallocated ptr buffer if not NULL
- *
- * Return: s
+ * _getline - function to gets the next line of input from STDIN
+ * @info: parameter struct info
+ * @ptr: address of buffer pointer to buffer preallocated
+ * @length: the size of preallocated ptr buffer
+ * Return: to s
  */
+
 int _getline(info_t *info, char **ptr, size_t *length)
 {
 	static char buf[READ_BUF_SIZE];
@@ -157,11 +157,11 @@ int _getline(info_t *info, char **ptr, size_t *length)
 }
 
 /**
- * sigintHandler - blocks ctrl-C
- * @sig_num: the signal number
- *
+ * sigintHandler - function to blocks ctrl-C
+ * @sig_num: the number of signal
  * Return: void
  */
+
 void sigintHandler(__attribute__((unused))int sig_num)
 {
 	_puts("\n");
